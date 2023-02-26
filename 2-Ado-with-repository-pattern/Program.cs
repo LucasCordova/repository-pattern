@@ -61,6 +61,6 @@ customerRepository.Delete(customerAfterAdd.Id);
 var customersAfterDelete = customerRepository.GetAll().SingleOrDefault(customer => customer.Email == "luke.skywalker@mail.com");
 
 Console.WriteLine(customersAfterDelete == null
-    ? "Customer deleted"
+    ? $"Customer deleted: {customerAfterAdd.FirstName} {customerAfterAdd.LastName}"
     : $"Customer not deleted: {customersAfterDelete.FirstName} {customersAfterDelete.LastName}");
 
